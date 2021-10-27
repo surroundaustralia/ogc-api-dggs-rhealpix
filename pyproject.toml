@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ogc-api-dggs-rhealpix"
+version = "0.1.0"
+description = ""
+authors = ["david-habgood <david.habgood@surroundaustralia.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8.10"
+fastapi = "^0.70.0"
+uvicorn = "^0.15.0"
+rhealpix-sf = "^0.2"
+rhealpix-geo = "^0.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
