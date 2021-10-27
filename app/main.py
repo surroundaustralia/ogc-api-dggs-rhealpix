@@ -3,9 +3,10 @@ from pathlib import Path
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-from .routers import dggsZQQuery, dggsZQSet
+from .routers import dggsCore, dggsZQQuery, dggsZQSet
 
 app = FastAPI()
+app.include_router(dggsCore.router)
 app.include_router(dggsZQSet.router)
 app.include_router(dggsZQQuery.router)
 
