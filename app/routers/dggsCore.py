@@ -21,6 +21,6 @@ async def zones():
     """
 
 
-@router.get("/rHEALPix/zone/{ZonalID}")
+@router.get("/TB16Pix/zone/{ZonalID}")
 async def zone(ZonalID):
     return {"Cell": Cell(ZonalID)}
