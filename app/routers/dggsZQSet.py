@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from rheal import *
 from rhealsf import *
 
-router = APIRouter(prefix="/dggs/rHEALPix/zone", tags=["zoneQuerySet"])
+router = APIRouter(prefix="/dggs/TB16Pix/zone", tags=["zoneQuerySet"])
 
 
 @router.get("/{ZonalID}/buffer")
@@ -32,7 +32,11 @@ async def intersection(ZonalID: str, otherZonalID: str):
 @router.get("/{ZonalID}/symDifference")
 async def symDifference(ZonalID: str, otherZonalID: str):
     """Get the list of zonalID that are the result of zoneId.symDifference(another)"""
-    return {"result": (Cell(ZonalID) - Cell(otherZonalID)).wkt}
+    return {
+        "result": (
+            (Cell(ZonalID) - Cell(otherZonalID)) + (Cell(otherZonalID) - Cell(ZonalID))
+        ).wkt
+    }
 
 
 @router.get("/{ZonalID}/union")

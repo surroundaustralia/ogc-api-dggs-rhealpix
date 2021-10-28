@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from rheal import *
 from rhealsf import *
 
-router = APIRouter(prefix="/dggs/rHEALPix/zone", tags=["zoneQueryQuery"])
+router = APIRouter(prefix="/dggs/TB16Pix/zone", tags=["zoneQueryQuery"])
 
 # TODO limit input to single ZonalID
 
